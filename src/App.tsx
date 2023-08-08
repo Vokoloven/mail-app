@@ -17,7 +17,7 @@ export const App = () => {
             <CssBaseline />
             <ThemeProvider theme={theme}>
                 <Routes>
-                    <Route path="/" element={<SharedLayout />}>
+                    <Route path="/mail-app" element={<SharedLayout />}>
                         <Route index element={<Home />} />
                         <Route path={'office'} element={<Office />} />
                     </Route>
