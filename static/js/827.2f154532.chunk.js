@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmail_app=self.webpackChunkmail_app||[]).push([[827],{827:function(n,e,u){u.r(e),u.d(e,{default:function(){return i}});var a=u(184),i=function(){return(0,a.jsx)("div",{children:"Home"})}}}]);
+//# sourceMappingURL=827.2f154532.chunk.js.map
