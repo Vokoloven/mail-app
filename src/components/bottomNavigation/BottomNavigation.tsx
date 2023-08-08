@@ -1,15 +1,14 @@
 import { useState } from 'react';
-import Box from '@mui/material/Box';
 import { Paper } from '@mui/material';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import HomeIcon from '@mui/icons-material/Home';
 import MapIcon from '@mui/icons-material/Map';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 type TItems = {
     id: string;
-    label: string;
+    label: 'Home' | 'Office';
     icon: JSX.Element;
     link: '/' | 'office';
 };
@@ -44,6 +43,8 @@ export const CustomBottomNavigation = () => {
             >
                 {items.map(({ id, label, icon, link }) => (
                     <BottomNavigationAction
+                        component={Link}
+                        to={link}
                         key={id}
                         label={label}
                         icon={icon}
