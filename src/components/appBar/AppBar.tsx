@@ -1,11 +1,21 @@
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
+import { Link } from 'react-router-dom';
+import {
+    Box,
+    AppBar,
+    Toolbar,
+    Typography,
+    IconButton,
+    Container,
+    Button
+} from '@mui/material';
+import { CustomBadge } from 'components/Badge';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import { TPages } from 'types';
+
+const pages: TPages[] = [
+    { id: '1', label: 'Home', link: '/' },
+    { id: '2', label: 'Office', link: 'office' }
+];
 
 export const CustomAppBar = () => {
     return (
@@ -24,23 +34,39 @@ export const CustomAppBar = () => {
                             padding: 0
                         })}
                     >
+                        <Box
+                            sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                flexGrow: 1
+                            }}
+                        >
+                            <LocalShippingIcon sx={{ mr: 2 }} />
+                            {pages.map(({ id, label, link }) => (
+                                <Button
+                                    key={id}
+                                    component={Link}
+                                    to={link}
+                                    sx={{
+                                        my: 2,
+                                        color: 'white',
+                                        display: 'block'
+                                    }}
+                                >
+                                    {label}
+                                </Button>
+                            ))}
+                        </Box>
                         <IconButton
-                            size="large"
-                            edge="start"
-                            color="inherit"
-                            aria-label="menu"
-                            sx={{ mr: 2 }}
+                            sx={{
+                                color: 'violet.contrastText',
+                                '&:hover': {
+                                    bgcolor: 'action.customHover'
+                                }
+                            }}
                         >
-                            <MenuIcon />
+                            <CustomBadge />
                         </IconButton>
-                        <Typography
-                            variant="h6"
-                            component="div"
-                            sx={{ flexGrow: 1 }}
-                        >
-                            News
-                        </Typography>
-                        <Button color="inherit">Login</Button>
                     </Container>
                 </Toolbar>
             </AppBar>

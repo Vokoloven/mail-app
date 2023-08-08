@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
-import { CustomBottomNavigation } from 'components/bottomNavigation';
-import { CustomAppBar } from 'components/appBar';
+import { CustomBottomNavigation } from 'components/BottomNavigation';
+import { CustomAppBar } from 'components/AppBar';
 import { Container, Box } from '@mui/material';
 
 export const SharedLayout = () => {
@@ -20,15 +20,7 @@ export const SharedLayout = () => {
                     </Suspense>
                 </Container>
             </Box>
-            <Container
-                sx={(theme) => ({
-                    [theme.breakpoints.up('tablet')]: {
-                        display: 'none'
-                    }
-                })}
-            >
-                <CustomBottomNavigation />
-            </Container>
+            <CustomBottomNavigation />
         </Box>
     );
 };
