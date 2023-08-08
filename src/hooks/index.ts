@@ -1,3 +1,4 @@
 import { useFonts } from './useFonts';
+import { useTheme } from './useTheme';
 
-export { useFonts };
+export { useFonts, useTheme };
