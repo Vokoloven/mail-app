@@ -8,7 +8,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <StrictMode>
-        <BrowserRouter basename="/">
+        <BrowserRouter basename="mail-app">
             <App />
         </BrowserRouter>
     </StrictMode>
