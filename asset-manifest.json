@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/mail-app/static/js/main.dfaa4218.js",
+    "main.js": "/mail-app/static/js/main.c4676cbb.js",
     "static/js/827.2f154532.chunk.js": "/mail-app/static/js/827.2f154532.chunk.js",
     "static/js/761.283f5545.chunk.js": "/mail-app/static/js/761.283f5545.chunk.js",
     "index.html": "/mail-app/index.html",
-    "main.dfaa4218.js.map": "/mail-app/static/js/main.dfaa4218.js.map",
+    "main.c4676cbb.js.map": "/mail-app/static/js/main.c4676cbb.js.map",
     "827.2f154532.chunk.js.map": "/mail-app/static/js/827.2f154532.chunk.js.map",
     "761.283f5545.chunk.js.map": "/mail-app/static/js/761.283f5545.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.dfaa4218.js"
+    "static/js/main.c4676cbb.js"
   ]
 }
