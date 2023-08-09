@@ -13,7 +13,7 @@ export const CustomBadge = () => {
                 }
             })}
         >
-            <ListIcon sx={{ color: 'violet.contrastText' }} />
+            <ListIcon sx={{ color: 'violet.main' }} />
         </Badge>
     );
 };

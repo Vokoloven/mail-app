@@ -5,18 +5,13 @@ import {
     BottomNavigation,
     BottomNavigationAction
 } from '@mui/material';
-import HomeIcon from '@mui/icons-material/Home';
-import MapIcon from '@mui/icons-material/Map';
+import { bottomPages } from './pages';
 import { Link } from 'react-router-dom';
-import { TPages } from 'types';
-
-const pages: TPages[] = [
-    { id: '1', label: 'Home', icon: <HomeIcon />, link: '/' },
-    { id: '2', label: 'Office', icon: <MapIcon />, link: 'office' }
-];
+import { useLoc } from 'hooks';
 
 export const CustomBottomNavigation = () => {
-    const [value, setValue] = useState(0);
+    const { bottomNav } = useLoc();
+    const [value, setValue] = useState(bottomNav);
 
     return (
         <Container
@@ -45,7 +40,7 @@ export const CustomBottomNavigation = () => {
                         justifyContent: 'space-around'
                     }}
                 >
-                    {pages.map(({ id, label, icon, link }) => (
+                    {bottomPages.map(({ id, label, icon, link }) => (
                         <BottomNavigationAction
                             component={Link}
                             to={link}

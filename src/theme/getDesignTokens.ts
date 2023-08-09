@@ -36,7 +36,7 @@ export const getDesignTokens = (): Theme => ({
                 getContrastRatio('#7F00FF', '#fff') > 4.5 ? '#fff' : '#111'
         },
         action: {
-            customHover: 'rgba(255, 255, 255, 0.04)'
+            violetHover: alpha(violetBase, 0.04)
         }
     },
     breakpoints: {
