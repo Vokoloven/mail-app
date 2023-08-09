@@ -1,4 +1,4 @@
-import { TPages } from 'types';
+import { TPages } from 'types/tPages';
 
 export const tabPages: TPages[] = [
     { id: '1', label: 'Home', link: '/' },

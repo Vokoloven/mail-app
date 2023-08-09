@@ -1,4 +1,4 @@
-import { TPages } from 'types';
+import { TPages } from 'types/tPages';
 import HomeIcon from '@mui/icons-material/Home';
 import MapIcon from '@mui/icons-material/Map';
 
