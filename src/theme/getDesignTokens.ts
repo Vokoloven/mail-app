@@ -33,7 +33,10 @@ export const getDesignTokens = (): Theme => ({
             light: alpha(violetBase, 0.5),
             dark: alpha(violetBase, 0.9),
             contrastText:
-                getContrastRatio('##7F00FF', '#fff') > 4.5 ? '#fff' : '#111'
+                getContrastRatio('#7F00FF', '#fff') > 4.5 ? '#fff' : '#111'
+        },
+        action: {
+            violetHover: alpha(violetBase, 0.04)
         }
     },
     breakpoints: {
