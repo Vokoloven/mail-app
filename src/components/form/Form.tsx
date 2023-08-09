@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Box } from '@mui/material';
+import { Box, Paper } from '@mui/material';
+
 import {
     useForm,
     SubmitHandler,
@@ -27,10 +28,12 @@ export const Form = () => {
     };
 
     return (
-        <Box
+        <Paper
             component={'form'}
             autoComplete={'off'}
             onSubmit={handleSubmit(onSubmit, onError)}
+            elevation={4}
+            sx={{ p: 4 }}
         >
             <Input register={register} error={error} />
             <CustomButton
@@ -40,6 +43,6 @@ export const Form = () => {
             >
                 Get status TTN
             </CustomButton>
-        </Box>
+        </Paper>
     );
 };
