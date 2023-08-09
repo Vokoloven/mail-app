@@ -19,9 +19,12 @@ export const CustomTab = () => {
             <Tabs
                 value={value}
                 onChange={handleChange}
-                textColor="secondary"
-                indicatorColor="secondary"
                 aria-label="secondary tabs example"
+                sx={{
+                    '& .MuiTabs-indicator': {
+                        bgcolor: 'violet.main'
+                    }
+                }}
             >
                 {tabPages.map(({ id, label, link }) => (
                     <Tab
@@ -31,6 +34,11 @@ export const CustomTab = () => {
                         id={id}
                         value={link}
                         label={label}
+                        sx={{
+                            '&.Mui-selected': {
+                                color: 'violet.main'
+                            }
+                        }}
                     />
                 ))}
             </Tabs>
