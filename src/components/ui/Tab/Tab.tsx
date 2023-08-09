@@ -19,7 +19,7 @@ export const CustomTab = () => {
             <Tabs
                 value={value}
                 onChange={handleChange}
-                aria-label="secondary tabs example"
+                aria-label="tabs"
                 sx={{
                     '& .MuiTabs-indicator': {
                         bgcolor: 'violet.main'

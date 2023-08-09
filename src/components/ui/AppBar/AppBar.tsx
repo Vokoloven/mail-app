@@ -1,4 +1,4 @@
-import { Box, AppBar, Toolbar, IconButton, Container } from '@mui/material';
+import { Box, AppBar, Toolbar, Container } from '@mui/material';
 import { CustomBadge } from 'components/ui/Badge';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import { CustomTab } from 'components/ui/Tab';
@@ -41,16 +41,7 @@ export const CustomAppBar = () => {
                                 <CustomTab />
                             </Box>
                         </Box>
-                        <IconButton
-                            sx={{
-                                color: 'violet.main',
-                                '&:hover': {
-                                    bgcolor: 'action.violetHover'
-                                }
-                            }}
-                        >
-                            <CustomBadge />
-                        </IconButton>
+                        <CustomBadge />
                     </Container>
                 </Toolbar>
             </AppBar>
