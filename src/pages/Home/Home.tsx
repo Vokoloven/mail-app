@@ -1,5 +1,12 @@
+import { Form } from 'components/form';
+import { AdaptiveContainer } from 'components/container';
+
 const Home = () => {
-    return <div>Home</div>;
+    return (
+        <AdaptiveContainer>
+            <Form />
+        </AdaptiveContainer>
+    );
 };
 
 export default Home;
