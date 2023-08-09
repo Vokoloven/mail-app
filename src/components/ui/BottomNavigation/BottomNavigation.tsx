@@ -42,6 +42,7 @@ export const CustomBottomNavigation = () => {
                 >
                     {bottomPages.map(({ id, label, icon, link }) => (
                         <BottomNavigationAction
+                            aria-label={label.toLocaleLowerCase()}
                             component={Link}
                             to={link}
                             key={id}
