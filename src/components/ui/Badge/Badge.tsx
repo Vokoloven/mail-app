@@ -11,6 +11,7 @@ export const CustomBadge = () => {
 
     return (
         <IconButton
+            onClick={toggleDrawer('right', true, setState, state)}
             aria-label="list"
             sx={(theme) => ({
                 color: 'violet.main',
@@ -22,12 +23,7 @@ export const CustomBadge = () => {
                 }
             })}
         >
-            <Badge
-                onClick={toggleDrawer('right', true, setState, state)}
-                badgeContent={7}
-                max={99}
-                color="error"
-            >
+            <Badge badgeContent={7} max={99} color="error">
                 <ListIcon sx={{ color: 'violet.main' }} />
             </Badge>
             <CustomDrawer state={state} setState={setState} />

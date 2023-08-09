@@ -42,6 +42,7 @@ export const CustomDrawer = ({ state, setState }: TProps) => {
 
     return (
         <Drawer
+            
             anchor={'right'}
             open={state['right']}
             onClose={toggleDrawer('right', false, setState, state)}

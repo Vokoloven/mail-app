@@ -28,7 +28,7 @@ export const CustomAppBar = () => {
                             }}
                         >
                             <LocalShippingIcon
-                                sx={{ mr: 2, color: 'violet.main' }}
+                                sx={{ mr: 10, color: 'violet.main' }}
                             />
                             <Box
                                 sx={(theme) => ({
