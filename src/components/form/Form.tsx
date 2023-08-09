@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Box, Paper } from '@mui/material';
+import { Paper } from '@mui/material';
 
 import {
     useForm,
@@ -12,15 +12,19 @@ import { Input } from 'components/form';
 import { CustomButton } from 'components/ui/Button';
 import { schema } from 'validation';
 import { TInputs } from 'types/tForm';
+import { fetchTrackingByTtn } from 'redux/serviceSlice';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from 'redux/store';
 
 export const Form = () => {
-    const { register, handleSubmit, setValue } = useForm<TInputs>({
+    const dispatch = useDispatch<AppDispatch>();
+    const { register, handleSubmit } = useForm<TInputs>({
         resolver: yupResolver(schema)
     });
     const [error, setError] = useState<FieldErrors<TInputs>>({});
 
-    const onSubmit: SubmitHandler<TInputs> = (data) => {
-        setValue('ttn', '');
+    const onSubmit: SubmitHandler<TInputs> = ({ ttn }) => {
+        dispatch(fetchTrackingByTtn(ttn));
         setError({});
     };
     const onError: SubmitErrorHandler<TInputs> = (err) => {
@@ -41,7 +45,7 @@ export const Form = () => {
                 aria-label={'submit'}
                 type={'submit'}
             >
-                Get status TTN
+                get status ttn
             </CustomButton>
         </Paper>
     );
