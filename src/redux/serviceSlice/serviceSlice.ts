@@ -1,22 +1,37 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchTrackingByTtn } from '.';
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import type { PayloadAction } from '@reduxjs/toolkit';
 
-type TServiceSlice<T> = {
-    data: T;
+type TServiceSlice = {
+    data: {};
     loading: 'idle' | 'pending' | 'succeeded' | 'failed';
     error: string | unknown;
+    list: {}[];
 };
 
-const initialState: TServiceSlice<{}> = {
+const initialState: TServiceSlice = {
     data: {},
     loading: 'idle',
-    error: ''
+    error: '',
+    list: []
+};
+
+const persistConfig = {
+    key: 'service',
+    storage,
+    whitelist: ['setList']
 };
 
 export const serviceSlice = createSlice({
     name: 'service',
     initialState,
-    reducers: {},
+    reducers: {
+        setList: (state, { payload }: PayloadAction<{}>) => {
+            state.list = [...state.list, payload];
+        }
+    },
     extraReducers: (builder) => {
         builder.addCase(fetchTrackingByTtn.pending, (state) => {
             state.loading = 'pending';
@@ -32,3 +47,10 @@ export const serviceSlice = createSlice({
         });
     }
 });
+
+export const persistedServiceReducer = persistReducer(
+    persistConfig,
+    serviceSlice.reducer
+);
+
+export const { setList } = serviceSlice.actions;
