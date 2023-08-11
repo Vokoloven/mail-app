@@ -9,13 +9,15 @@ type TServiceSlice = {
     loading: 'idle' | 'pending' | 'succeeded' | 'failed';
     error: string | unknown;
     list: { id?: string; ttn?: string }[];
+    ttn: string;
 };
 
 const initialState: TServiceSlice = {
     data: {},
     loading: 'idle',
     error: '',
-    list: []
+    list: [],
+    ttn: ''
 };
 
 const persistConfig = {
@@ -34,6 +36,9 @@ export const serviceSlice = createSlice({
             } else {
                 state.list = [...state.list, payload];
             }
+        },
+        setTtn: (state, { payload }: PayloadAction<string>) => {
+            state.ttn = payload;
         }
     },
     extraReducers: (builder) => {
@@ -57,4 +62,4 @@ export const persistedServiceReducer = persistReducer(
     serviceSlice.reducer
 );
 
-export const { setList } = serviceSlice.actions;
+export const { setList, setTtn } = serviceSlice.actions;

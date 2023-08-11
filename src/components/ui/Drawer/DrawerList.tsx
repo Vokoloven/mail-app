@@ -10,7 +10,7 @@ import {
 import { toggleDrawer } from './toggleDrawer';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectService } from 'redux/selectors';
-import { setList } from 'redux/serviceSlice';
+import { setList, setTtn } from 'redux/serviceSlice';
 import NumbersIcon from '@mui/icons-material/Numbers';
 import DeleteIcon from '@mui/icons-material/Delete';
 import HistoryIcon from '@mui/icons-material/History';
@@ -47,6 +47,7 @@ export const DrawerList = ({ setState, state }: TProps) => {
                                                 formatter(ttn!, 'unformat')
                                             )
                                         );
+                                        dispatch(setTtn(ttn!));
                                     }}
                                     aria-label="list"
                                     sx={{

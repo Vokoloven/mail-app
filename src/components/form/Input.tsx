@@ -1,13 +1,14 @@
 import TextField from '@mui/material/TextField';
 import { TProps } from 'types/tForm';
 
-export const Input = ({ register, error, handleChange }: TProps) => {
+export const Input = ({ register, error, handleChange, values }: TProps) => {
     return (
         <TextField
             id="ttn"
             label="TTN *"
             variant="outlined"
             error={!!error.ttn}
+            focused={!!values?.ttn}
             {...register('ttn')}
             onChange={handleChange}
             helperText={error.ttn?.message}

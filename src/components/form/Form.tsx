@@ -4,8 +4,15 @@ import { CustomButton } from 'components/ui/Button';
 import { useHandleForm } from 'hooks';
 
 export const Form = () => {
-    const { register, error, handleSubmit, onSubmit, onError, handleChange } =
-        useHandleForm();
+    const {
+        register,
+        error,
+        handleSubmit,
+        onSubmit,
+        onError,
+        handleChange,
+        values
+    } = useHandleForm();
 
     return (
         <Paper
@@ -19,6 +26,7 @@ export const Form = () => {
                 register={register}
                 error={error}
                 handleChange={handleChange}
+                values={values}
             />
             <CustomButton
                 sx={{ mt: 4, width: '100%' }}
