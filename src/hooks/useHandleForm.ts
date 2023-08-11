@@ -11,26 +11,23 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch } from 'redux/store';
 import { TInputs } from 'types/tForm';
 import { fetchTrackingByTtn, setList, setTtn } from 'redux/serviceSlice';
-import { nanoid } from 'nanoid';
 import { formatter, duplicator } from 'utils';
 import { selectService } from 'redux/selectors';
 
-const id = nanoid();
-
 export const useHandleForm = () => {
-    const { list, ttn } = useSelector(selectService);
-
     const dispatch = useDispatch<AppDispatch>();
+    const { list, ttn } = useSelector(selectService);
+    const [error, setError] = useState<FieldErrors<TInputs>>({});
     const { register, handleSubmit, setValue, getValues } = useForm<TInputs>({
         resolver: yupResolver(schema)
     });
-    const [error, setError] = useState<FieldErrors<TInputs>>({});
 
     const onSubmit: SubmitHandler<TInputs> = ({ ttn }) => {
         dispatch(fetchTrackingByTtn(formatter(ttn, 'unformat')));
-        if (!duplicator(list, ttn)) dispatch(setList({ id, ttn }));
+        if (!duplicator(list, ttn)) dispatch(setList({ ttn }));
         setError({});
     };
+
     const onError: SubmitErrorHandler<TInputs> = (err) => {
         setError(err);
     };

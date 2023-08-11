@@ -5,6 +5,6 @@ const regExp = /^\d{2}\s\d{4}\s\d{4}\s\d{4}$/;
 export const schema = yup.object().shape({
     ttn: yup
         .string()
-        .matches(regExp, 'Format: ** **** **** **** digits')
+        .matches(regExp, 'Please write correct TTN number')
         .required()
 });

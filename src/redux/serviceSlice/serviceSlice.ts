@@ -8,7 +8,7 @@ type TServiceSlice = {
     data: {};
     loading: 'idle' | 'pending' | 'succeeded' | 'failed';
     error: string | unknown;
-    list: { id?: string; ttn?: string }[];
+    list: { ttn?: string }[];
     ttn: string;
 };
 

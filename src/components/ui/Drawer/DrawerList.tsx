@@ -38,8 +38,8 @@ export const DrawerList = ({ setState, state }: TProps) => {
                 <Divider />
                 {list.length > 0 && (
                     <React.Fragment>
-                        {list.map(({ id, ttn }) => (
-                            <ListItem key={id} disablePadding>
+                        {list.map(({ ttn }, index) => (
+                            <ListItem key={index} disablePadding>
                                 <ListItemButton
                                     onClick={() => {
                                         dispatch(
