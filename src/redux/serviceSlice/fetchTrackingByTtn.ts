@@ -1,6 +1,6 @@
+import { axiosConfig } from 'services';
 import { AxiosError } from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { axiosConfig } from 'services';
 
 export const fetchTrackingByTtn = createAsyncThunk(
     'tracking/fetchByTtn',
