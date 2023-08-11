@@ -9,5 +9,8 @@ export const CustomButton = styled(Button)(({ theme }) => ({
         color: theme.palette.violet.main,
         backgroundColor: theme.palette.background.paper,
         border: `1px solid ${theme.palette.violet.main}`
+    },
+    '&.MuiButtonBase-root.Mui-disabled': {
+        backgroundColor: theme.palette.action.disabledBackground
     }
 }));

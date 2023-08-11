@@ -11,7 +11,7 @@ const Home = () => {
                     variant={'h4'}
                     sx={{ mb: 3, fontWeight: '500' }}
                 >
-                    Delivery Cheker
+                    Delivery checker
                 </Typography>
                 <Form />
             </Box>

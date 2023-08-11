@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-const regExp = /^\d{2}\s\d{4}\s\d{4}\s\d{4}$/;
+const regExp = /^(20|59)(\s\d{4}\s\d{4}\s\d{4})$/;
 
 export const schema = yup.object().shape({
     ttn: yup
