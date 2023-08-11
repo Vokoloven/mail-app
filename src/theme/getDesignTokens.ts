@@ -36,7 +36,8 @@ export const getDesignTokens = (): Theme => ({
                 getContrastRatio('#7F00FF', '#fff') > 4.5 ? '#fff' : '#111'
         },
         action: {
-            violetHover: alpha(violetBase, 0.04)
+            violetHover: alpha(violetBase, 0.04),
+            errorHover: alpha('#d32f2f', 0.04)
         }
     },
     breakpoints: {

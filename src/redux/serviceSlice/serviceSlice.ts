@@ -8,7 +8,7 @@ type TServiceSlice = {
     data: {};
     loading: 'idle' | 'pending' | 'succeeded' | 'failed';
     error: string | unknown;
-    list: {}[];
+    list: { id?: string; ttn?: string }[];
 };
 
 const initialState: TServiceSlice = {
@@ -21,7 +21,7 @@ const initialState: TServiceSlice = {
 const persistConfig = {
     key: 'service',
     storage,
-    whitelist: ['setList']
+    whitelist: ['list']
 };
 
 export const serviceSlice = createSlice({
@@ -29,7 +29,11 @@ export const serviceSlice = createSlice({
     initialState,
     reducers: {
         setList: (state, { payload }: PayloadAction<{}>) => {
-            state.list = [...state.list, payload];
+            if (Object.keys(payload).length === 0) {
+                state.list = [];
+            } else {
+                state.list = [...state.list, payload];
+            }
         }
     },
     extraReducers: (builder) => {

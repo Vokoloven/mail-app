@@ -4,7 +4,7 @@ import { CustomButton } from 'components/ui/Button';
 import { useHandleForm } from 'hooks';
 
 export const Form = () => {
-    const { register, error, handleSubmit, onSubmit, onError } =
+    const { register, error, handleSubmit, onSubmit, onError, handleChange } =
         useHandleForm();
 
     return (
@@ -15,7 +15,11 @@ export const Form = () => {
             elevation={4}
             sx={{ p: 4 }}
         >
-            <Input register={register} error={error} />
+            <Input
+                register={register}
+                error={error}
+                handleChange={handleChange}
+            />
             <CustomButton
                 sx={{ mt: 4, width: '100%' }}
                 aria-label={'submit'}

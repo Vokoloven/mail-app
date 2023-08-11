@@ -1,10 +1,10 @@
 import * as yup from 'yup';
 
-const regExp = /^20[0-9]{12}$/;
+const regExp = /^\d{2}\s\d{4}\s\d{4}\s\d{4}$/;
 
 export const schema = yup.object().shape({
     ttn: yup
         .string()
-        .matches(regExp, 'Format: 20 **** **** **** digits')
+        .matches(regExp, 'Format: ** **** **** **** digits')
         .required()
 });
