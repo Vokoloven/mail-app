@@ -7,4 +7,6 @@ export type TInputs = {
 export type TProps = {
     register: UseFormRegister<TInputs>;
     error: FieldErrors<TInputs>;
+    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    values: TInputs;
 };

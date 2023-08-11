@@ -1,31 +1,18 @@
-import { useState } from 'react';
-import { Box, Paper } from '@mui/material';
-
-import {
-    useForm,
-    SubmitHandler,
-    SubmitErrorHandler,
-    FieldErrors
-} from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
+import { Paper } from '@mui/material';
 import { Input } from 'components/form';
 import { CustomButton } from 'components/ui/Button';
-import { schema } from 'validation';
-import { TInputs } from 'types/tForm';
+import { useHandleForm } from 'hooks';
 
 export const Form = () => {
-    const { register, handleSubmit, setValue } = useForm<TInputs>({
-        resolver: yupResolver(schema)
-    });
-    const [error, setError] = useState<FieldErrors<TInputs>>({});
-
-    const onSubmit: SubmitHandler<TInputs> = (data) => {
-        setValue('ttn', '');
-        setError({});
-    };
-    const onError: SubmitErrorHandler<TInputs> = (err) => {
-        setError(err);
-    };
+    const {
+        register,
+        error,
+        handleSubmit,
+        onSubmit,
+        onError,
+        handleChange,
+        values
+    } = useHandleForm();
 
     return (
         <Paper
@@ -35,13 +22,18 @@ export const Form = () => {
             elevation={4}
             sx={{ p: 4 }}
         >
-            <Input register={register} error={error} />
+            <Input
+                register={register}
+                error={error}
+                handleChange={handleChange}
+                values={values}
+            />
             <CustomButton
                 sx={{ mt: 4, width: '100%' }}
                 aria-label={'submit'}
                 type={'submit'}
             >
-                Get status TTN
+                get status ttn
             </CustomButton>
         </Paper>
     );
