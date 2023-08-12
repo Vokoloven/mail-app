@@ -46,7 +46,7 @@ export const HomeCard = () => {
                             {loading === 'pending' ? (
                                 <Skeleton />
                             ) : (
-                                `${capitalize(name)}: ${field} `
+                                `${capitalize(name)}: ${field}`
                             )}
                         </Typography>
                     </Box>

@@ -16,7 +16,7 @@ import { selectService } from 'redux/selectors';
 
 export const useHandleForm = () => {
     const dispatch = useDispatch<AppDispatch>();
-    const { list, ttn } = useSelector(selectService);
+    const { list, ttn, loading } = useSelector(selectService);
     const [error, setError] = useState<FieldErrors<TInputs>>({});
     const { register, handleSubmit, setValue, getValues } = useForm<TInputs>({
         resolver: yupResolver(schema)
@@ -55,6 +55,7 @@ export const useHandleForm = () => {
         onSubmit,
         onError,
         handleChange,
-        values
+        values,
+        loading
     };
 };
