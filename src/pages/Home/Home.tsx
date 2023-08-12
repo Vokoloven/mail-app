@@ -1,6 +1,7 @@
 import { Form } from 'components/form';
 import { Box, Typography } from '@mui/material';
 import { AdaptiveContainer } from 'components/container';
+import { HomeCard } from 'components/ui/Cards';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
                     Delivery checker
                 </Typography>
                 <Form />
+                <HomeCard />
             </Box>
         </AdaptiveContainer>
     );

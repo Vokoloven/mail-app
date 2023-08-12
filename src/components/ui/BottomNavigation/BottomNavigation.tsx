@@ -16,6 +16,7 @@ export const CustomBottomNavigation = () => {
     return (
         <Container
             sx={(theme) => ({
+                pt: 10,
                 [theme.breakpoints.up('tablet')]: {
                     display: 'none'
                 }

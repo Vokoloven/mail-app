@@ -3,9 +3,10 @@ import { fetchTrackingByTtn } from '.';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import type { PayloadAction } from '@reduxjs/toolkit';
+import { TStatus } from 'types/tStatus';
 
 type TServiceSlice = {
-    data: {};
+    data: TStatus<boolean | null | [], string>;
     loading: 'idle' | 'pending' | 'succeeded' | 'failed';
     error: string | unknown;
     list: { ttn?: string }[];

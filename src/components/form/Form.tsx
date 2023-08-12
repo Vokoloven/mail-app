@@ -1,4 +1,4 @@
-import { Paper } from '@mui/material';
+import { Paper, CircularProgress, Box, Typography } from '@mui/material';
 import { Input } from 'components/form';
 import { CustomButton } from 'components/ui/Button';
 import { useHandleForm } from 'hooks';
@@ -11,7 +11,8 @@ export const Form = () => {
         onSubmit,
         onError,
         handleChange,
-        values
+        values,
+        loading
     } = useHandleForm();
 
     return (
@@ -32,8 +33,33 @@ export const Form = () => {
                 sx={{ mt: 4, width: '100%' }}
                 aria-label={'submit'}
                 type={'submit'}
+                disabled={loading === 'pending'}
             >
-                get status ttn
+                {loading === 'pending' ? (
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}
+                    >
+                        <Typography
+                            variant={'button'}
+                            component={'p'}
+                            sx={{ mr: 2 }}
+                        >
+                            Loading...
+                        </Typography>
+                        {
+                            <CircularProgress
+                                size={'1em'}
+                                sx={{ color: 'violet.main' }}
+                            />
+                        }
+                    </Box>
+                ) : (
+                    'get status ttn'
+                )}
             </CustomButton>
         </Paper>
     );
