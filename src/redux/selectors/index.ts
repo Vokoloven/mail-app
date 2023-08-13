@@ -1,3 +1,4 @@
 import { selectService } from './selectService/selectService';
+import { selectWarehouse } from './selectWarehouse';
 
-export { selectService };
+export { selectService, selectWarehouse };

@@ -27,30 +27,33 @@ export const HomeCard = () => {
                     m: 0
                 }}
             >
-                {items.map(({ name, field }) => (
-                    <Box
-                        component={'li'}
-                        key={name}
-                        sx={{
-                            listStyle: 'none',
-                            '&:not(:last-child)': {
-                                mb: 1
-                            }
-                        }}
-                    >
-                        <Typography
-                            variant={'h6'}
-                            component={'p'}
-                            sx={{ fontSize: 16 }}
-                        >
-                            {loading === 'pending' ? (
-                                <Skeleton />
-                            ) : (
-                                `${capitalize(name)}: ${field}`
-                            )}
-                        </Typography>
-                    </Box>
-                ))}
+                {items.map(
+                    ({ name, field }) =>
+                        field && (
+                            <Box
+                                component={'li'}
+                                key={name}
+                                sx={{
+                                    listStyle: 'none',
+                                    '&:not(:last-child)': {
+                                        mb: 1
+                                    }
+                                }}
+                            >
+                                <Typography
+                                    variant={'h6'}
+                                    component={'p'}
+                                    sx={{ fontSize: 16 }}
+                                >
+                                    {loading === 'pending' ? (
+                                        <Skeleton />
+                                    ) : (
+                                        `${capitalize(name)}: ${field}`
+                                    )}
+                                </Typography>
+                            </Box>
+                        )
+                )}
             </Box>
         </Paper>
     ) : null;
