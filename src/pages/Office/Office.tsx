@@ -30,7 +30,7 @@ const Office = () => {
         <AdaptiveContainer>
             {loading === 'idle' && (
                 <Alert severity="warning">
-                    For viewing nearest offices locations, please write TTN
+                    For viewing nearest offices location, please write TTN
                     number on Home page.
                 </Alert>
             )}
@@ -45,7 +45,7 @@ const Office = () => {
                     variant={'h4'}
                     sx={{ mb: 3, fontWeight: '500' }}
                 >
-                    Offices locations
+                    Offices location
                 </Typography>
             )}
             <Box
