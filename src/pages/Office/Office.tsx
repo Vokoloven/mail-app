@@ -1,5 +1,5 @@
 import { WarehouseCard } from 'components/ui/Cards';
-import { Typography, Box, CircularProgress } from '@mui/material';
+import { Typography, Box, CircularProgress, Alert } from '@mui/material';
 import { AdaptiveContainer } from 'components/container';
 import { useInfinityScroll } from 'hooks';
 
@@ -28,13 +28,20 @@ const Office = () => {
 
     return (
         <AdaptiveContainer>
-            <Typography
-                component={'h1'}
-                variant={'h4'}
-                sx={{ mb: 3, fontWeight: '500' }}
-            >
-                Office location
-            </Typography>
+            {Boolean(warehouses.length) ? (
+                <Typography
+                    component={'h1'}
+                    variant={'h4'}
+                    sx={{ mb: 3, fontWeight: '500' }}
+                >
+                    Office locations
+                </Typography>
+            ) : (
+                <Alert severity="warning">
+                    For viewing nearest office locations, please write TTN
+                    number on Home Page
+                </Alert>
+            )}
             <Box
                 sx={(theme) => ({
                     [theme.breakpoints.up('tablet')]: {
