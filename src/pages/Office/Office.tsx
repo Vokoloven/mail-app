@@ -30,8 +30,8 @@ const Office = () => {
         <AdaptiveContainer>
             {loading === 'idle' && (
                 <Alert severity="warning">
-                    For viewing nearest office locations, please write TTN
-                    number on Home Page
+                    For viewing nearest offices locations, please write TTN
+                    number on Home page.
                 </Alert>
             )}
             {Boolean(warehouses.length) && (
