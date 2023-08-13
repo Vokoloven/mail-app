@@ -31,7 +31,7 @@ export const Form = () => {
             />
             <CustomButton
                 sx={{ mt: 4, width: '100%' }}
-                aria-label={'submit'}
+                aria-label={'get status ttn'}
                 type={'submit'}
                 disabled={loading === 'pending'}
             >
