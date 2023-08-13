@@ -32,6 +32,7 @@ In case if you want to deploy this project into your base, you are required **`.
 
 2. Addition
 
+-   [x] Optimized site opening speed [PageSpeed Insights](https://pagespeed.web.dev/analysis/https-vokoloven-github-io-mail-app/xb8pnnwcs5?form_factor=mobile)
 -   [x] Automatically deploying into gh-pages after push
 -   [x] Additional layout for mobile
 -   [x] Infinity scroll for list of offices
