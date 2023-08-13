@@ -45,7 +45,7 @@ const Office = () => {
                     variant={'h4'}
                     sx={{ mb: 3, fontWeight: '500' }}
                 >
-                    Office locations
+                    Offices locations
                 </Typography>
             )}
             <Box
