@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkmail_app=self.webpackChunkmail_app||[]).push([[761],{7761:function(n,e,u){u.r(e),u.d(e,{default:function(){return a}});var i=u(184),a=function(){return(0,i.jsx)("div",{children:"Office"})}}}]);
-//# sourceMappingURL=761.3a0481bd.chunk.js.map
