@@ -28,13 +28,30 @@ const Office = () => {
 
     return (
         <AdaptiveContainer>
-            {content}
+            <Typography
+                component={'h1'}
+                variant={'h4'}
+                sx={{ mb: 3, fontWeight: '500' }}
+            >
+                Office location
+            </Typography>
+            <Box
+                sx={(theme) => ({
+                    [theme.breakpoints.up('tablet')]: {
+                        maxWidth: '420px',
+                        ...(loading !== 'pending' && { pb: 8 })
+                    }
+                })}
+            >
+                {content}
+            </Box>
             {loading === 'pending' && (
                 <Box
                     sx={{
                         display: 'flex',
                         justifyContent: 'center',
-                        alignItems: 'center'
+                        alignItems: 'center',
+                        pb: 4
                     }}
                 >
                     <Typography component={'p'} variant={'h6'} sx={{ mr: 3 }}>

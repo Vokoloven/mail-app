@@ -2,11 +2,20 @@ import { Form } from 'components/form';
 import { Box, Typography } from '@mui/material';
 import { AdaptiveContainer } from 'components/container';
 import { HomeCard } from 'components/ui/Cards';
+import { Sidebar } from 'components/ui/Sidebar';
 
 const Home = () => {
     return (
         <AdaptiveContainer>
-            <Box component={'main'}>
+            <Box
+                component={'main'}
+                sx={(theme) => ({
+                    [theme.breakpoints.up('tablet')]: {
+                        display: 'flex',
+                        flexDirection: 'column'
+                    }
+                })}
+            >
                 <Typography
                     component={'h1'}
                     variant={'h4'}
@@ -14,8 +23,33 @@ const Home = () => {
                 >
                     Delivery checker
                 </Typography>
-                <Form />
-                <HomeCard />
+                <Box
+                    sx={(theme) => ({
+                        [theme.breakpoints.up('tablet')]: {
+                            display: 'flex'
+                        }
+                    })}
+                >
+                    <Box
+                        sx={(theme) => ({
+                            [theme.breakpoints.up('tablet')]: {
+                                flexGrow: 1
+                            }
+                        })}
+                    >
+                        <Box
+                            sx={(theme) => ({
+                                [theme.breakpoints.up('tablet')]: {
+                                    maxWidth: '420px'
+                                }
+                            })}
+                        >
+                            <Form />
+                            <HomeCard />
+                        </Box>
+                    </Box>
+                    <Sidebar />
+                </Box>
             </Box>
         </AdaptiveContainer>
     );

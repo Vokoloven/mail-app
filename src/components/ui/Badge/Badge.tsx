@@ -5,14 +5,16 @@ import { CustomDrawer } from '../Drawer';
 import { toggleDrawer } from '../Drawer/toggleDrawer';
 import { useSelector } from 'react-redux';
 import { selectService } from 'redux/selectors';
+import { useLoc } from 'hooks';
 
 export const CustomBadge = () => {
     const [state, setState] = useState<{ right: boolean }>({
         right: false
     });
     const { list } = useSelector(selectService);
+    const { bottomNav } = useLoc();
 
-    return (
+    return bottomNav === 0 ? (
         <IconButton
             onClick={toggleDrawer('right', true, setState, state)}
             aria-label="list"
@@ -31,5 +33,5 @@ export const CustomBadge = () => {
             </Badge>
             <CustomDrawer state={state} setState={setState} />
         </IconButton>
-    );
+    ) : null;
 };
