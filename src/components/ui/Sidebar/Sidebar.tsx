@@ -31,13 +31,9 @@ export const Sidebar = () => {
                 width: '280px',
                 display: 'flex',
                 flexDirection: 'column',
-                ...(list.length > 5
-                    ? {
-                          maxHeight: `${height - 300}px`,
-                          overflow: 'hidden',
-                          overflowY: 'auto'
-                      }
-                    : { maxWidth: 'auto' }),
+                maxHeight: `${height - 300}px`,
+                overflow: 'hidden',
+                overflowY: 'auto',
 
                 [theme.breakpoints.down('tablet')]: {
                     display: 'none'
