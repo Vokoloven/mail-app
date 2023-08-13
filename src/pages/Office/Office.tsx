@@ -13,10 +13,17 @@ const Office = () => {
                     ref={lastOfWarehouses}
                     key={warehouse.SiteKey}
                     warehouse={warehouse}
+                    loading={loading}
                 />
             );
         }
-        return <WarehouseCard key={warehouse.SiteKey} warehouse={warehouse} />;
+        return (
+            <WarehouseCard
+                key={warehouse.SiteKey}
+                warehouse={warehouse}
+                loading={loading}
+            />
+        );
     });
 
     return (

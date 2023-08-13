@@ -1,11 +1,14 @@
 import React from 'react';
-import { Card, CardContent, Typography } from '@mui/material';
+import { Card, CardContent, Typography, Skeleton } from '@mui/material';
 import { TWarehouseProps } from 'types/tWarehouse';
 
 export const WarehouseCard = React.forwardRef<
     any,
-    { warehouse: TWarehouseProps<string> }
->(({ warehouse: { Description, ShortAddress } }, ref) => {
+    {
+        warehouse: TWarehouseProps<string>;
+        loading: 'idle' | 'pending' | 'succeeded' | 'failed';
+    }
+>(({ warehouse: { Description, ShortAddress }, loading }, ref) => {
     const content = ref ? (
         <Card
             ref={ref}
@@ -23,9 +26,16 @@ export const WarehouseCard = React.forwardRef<
                     color="text.secondary"
                     gutterBottom
                 >
-                    {Description.match(/[а-щА-ЩЬьЮюЯяЇїІіЄєҐґ' №\d"()]+/)}
+                    {loading === 'pending' ? (
+                        <Skeleton />
+                    ) : (
+                        Description.match(/[а-щА-ЩЬьЮюЯяЇїІіЄєҐґ' №\d"()]+/)
+                    )}
                 </Typography>
-                <Typography color="text.secondary">{ShortAddress}</Typography>
+                <Typography color="text.secondary">
+                    {' '}
+                    {loading === 'pending' ? <Skeleton /> : ShortAddress}
+                </Typography>
             </CardContent>
         </Card>
     ) : (
@@ -44,9 +54,15 @@ export const WarehouseCard = React.forwardRef<
                     color="text.secondary"
                     gutterBottom
                 >
-                    {Description.match(/[а-щА-ЩЬьЮюЯяЇїІіЄєҐґ' №\d"()]+/)}
+                    {loading === 'pending' ? (
+                        <Skeleton />
+                    ) : (
+                        Description.match(/[а-щА-ЩЬьЮюЯяЇїІіЄєҐґ' №\d"()]+/)
+                    )}
                 </Typography>
-                <Typography color="text.secondary">{ShortAddress}</Typography>
+                <Typography color="text.secondary">
+                    {loading === 'pending' ? <Skeleton /> : ShortAddress}
+                </Typography>
             </CardContent>
         </Card>
     );
