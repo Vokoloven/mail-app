@@ -38,6 +38,9 @@ In case if you want to deploy this project into your base, you are required **`.
 -   [x] Infinity scroll for list of offices
 -   [x] Added validation by react-hook-forms + regexp schemas
 -   [x] Custom hooks for screen dimensions, async loading fonts, etc.
+-   [x] Redux Persist
+-   [x] Lazy loading react components
+-   [x] App test
 
 ### Contacts
 
