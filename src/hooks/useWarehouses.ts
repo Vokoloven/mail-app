@@ -34,7 +34,5 @@ export const useWarehouses = (page = 1) => {
         getWarehouses();
     }, [dispatch, page, refCity?.RefCityRecipient]);
 
-    console.log(warehouses);
-
     return { warehouses };
 };
