@@ -45,7 +45,9 @@ export const Sidebar = () => {
                     <HistoryIcon sx={{ color: 'violet.main', mr: 4 }} />
                     <ListItemText>TTN History</ListItemText>
                 </ListItem>
-                <Divider />
+            </List>
+            <Divider />
+            <List>
                 {list.length > 0 && (
                     <React.Fragment>
                         {list.map(({ ttn }, index) => (
