@@ -34,6 +34,11 @@ const Office = () => {
                     number on Home page.
                 </Alert>
             )}
+            {loading === 'succeeded' && !Boolean(warehouses.length) && (
+                <Alert severity="warning">
+                    Check your TTN number and send request again.
+                </Alert>
+            )}
             {Boolean(warehouses.length) && (
                 <Typography
                     component={'h1'}
