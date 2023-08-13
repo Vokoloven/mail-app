@@ -1,5 +1,4 @@
 import {
-    Box,
     List,
     Divider,
     ListItem,
@@ -32,9 +31,14 @@ export const Sidebar = () => {
                 width: '280px',
                 display: 'flex',
                 flexDirection: 'column',
-                maxHeight: `${height - 300}px`,
-                overflow: 'hidden',
-                overflowY: 'scroll',
+                ...(list.length > 5
+                    ? {
+                          maxHeight: `${height - 300}px`,
+                          overflow: 'hidden',
+                          overflowY: 'auto'
+                      }
+                    : { maxWidth: 'auto' }),
+
                 [theme.breakpoints.down('tablet')]: {
                     display: 'none'
                 }

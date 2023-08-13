@@ -8,6 +8,7 @@ const Home = () => {
     return (
         <AdaptiveContainer>
             <Box
+                component={'main'}
                 sx={(theme) => ({
                     [theme.breakpoints.up('tablet')]: {
                         display: 'flex',
@@ -37,7 +38,6 @@ const Home = () => {
                         })}
                     >
                         <Box
-                            component={'main'}
                             sx={(theme) => ({
                                 [theme.breakpoints.up('tablet')]: {
                                     maxWidth: '420px'
