@@ -6,7 +6,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import { TStatus } from 'types/tStatus';
 
 type TServiceSlice = {
-    data: TStatus<boolean | null | [], string>;
+    data: Partial<TStatus<boolean | null | [], string>>;
     loading: 'idle' | 'pending' | 'succeeded' | 'failed';
     error: string | unknown;
     list: { ttn?: string }[];

@@ -13,9 +13,9 @@ export const HomeCard = () => {
         name: string;
         field: string;
     }[] = [
-        { name: 'status', field: data?.[0].Status as string },
-        { name: 'sender', field: data?.[0].WarehouseSender as string },
-        { name: 'receiver', field: data?.[0].WarehouseRecipient as string }
+        { name: 'status', field: data?.[0].Status! },
+        { name: 'sender', field: data?.[0].WarehouseSender! },
+        { name: 'receiver', field: data?.[0].WarehouseRecipient! }
     ];
 
     return loading !== 'idle' ? (
@@ -27,30 +27,33 @@ export const HomeCard = () => {
                     m: 0
                 }}
             >
-                {items.map(({ name, field }) => (
-                    <Box
-                        component={'li'}
-                        key={name}
-                        sx={{
-                            listStyle: 'none',
-                            '&:not(:last-child)': {
-                                mb: 1
-                            }
-                        }}
-                    >
-                        <Typography
-                            variant={'h6'}
-                            component={'p'}
-                            sx={{ fontSize: 16 }}
-                        >
-                            {loading === 'pending' ? (
-                                <Skeleton />
-                            ) : (
-                                `${capitalize(name)}: ${field}`
-                            )}
-                        </Typography>
-                    </Box>
-                ))}
+                {items.map(
+                    ({ name, field }) =>
+                        field && (
+                            <Box
+                                component={'li'}
+                                key={name}
+                                sx={{
+                                    listStyle: 'none',
+                                    '&:not(:last-child)': {
+                                        mb: 1
+                                    }
+                                }}
+                            >
+                                <Typography
+                                    variant={'h6'}
+                                    component={'p'}
+                                    sx={{ fontSize: 16 }}
+                                >
+                                    {loading === 'pending' ? (
+                                        <Skeleton />
+                                    ) : (
+                                        `${capitalize(name)}: ${field}`
+                                    )}
+                                </Typography>
+                            </Box>
+                        )
+                )}
             </Box>
         </Paper>
     ) : null;
