@@ -13,9 +13,9 @@ export const HomeCard = () => {
         name: string;
         field: string;
     }[] = [
-        { name: 'status', field: data?.[0].Status as string },
-        { name: 'sender', field: data?.[0].WarehouseSender as string },
-        { name: 'receiver', field: data?.[0].WarehouseRecipient as string }
+        { name: 'status', field: data?.[0].Status! },
+        { name: 'sender', field: data?.[0].WarehouseSender! },
+        { name: 'receiver', field: data?.[0].WarehouseRecipient! }
     ];
 
     return loading !== 'idle' ? (

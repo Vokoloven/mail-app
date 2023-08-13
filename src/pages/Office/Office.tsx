@@ -22,7 +22,7 @@ const Office = () => {
     return (
         <AdaptiveContainer>
             {content}
-            {loading === 'succeeded' && (
+            {loading === 'pending' && (
                 <Box
                     sx={{
                         display: 'flex',
