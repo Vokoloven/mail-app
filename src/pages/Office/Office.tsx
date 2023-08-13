@@ -28,7 +28,13 @@ const Office = () => {
 
     return (
         <AdaptiveContainer>
-            {Boolean(warehouses.length) ? (
+            {loading === 'idle' && (
+                <Alert severity="warning">
+                    For viewing nearest office locations, please write TTN
+                    number on Home Page
+                </Alert>
+            )}
+            {Boolean(warehouses.length) && (
                 <Typography
                     component={'h1'}
                     variant={'h4'}
@@ -36,11 +42,6 @@ const Office = () => {
                 >
                     Office locations
                 </Typography>
-            ) : (
-                <Alert severity="warning">
-                    For viewing nearest office locations, please write TTN
-                    number on Home Page
-                </Alert>
             )}
             <Box
                 sx={(theme) => ({
