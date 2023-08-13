@@ -18,7 +18,6 @@ export const useInfinityScroll = () => {
 
             intObserved.current = new IntersectionObserver((warehouses) => {
                 if (warehouses[0].isIntersecting && hasNextPage) {
-                    console.log('We are at near last post');
                     setPage((prevPage) => prevPage + 1);
                 }
             });
