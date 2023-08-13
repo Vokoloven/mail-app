@@ -19,15 +19,13 @@ export const WarehouseCard = React.forwardRef<
         >
             <CardContent>
                 <Typography
-                    sx={{ fontSize: 14 }}
+                    sx={{ fontSize: 14, fontWeight: 'bold' }}
                     color="text.secondary"
                     gutterBottom
                 >
                     {Description.match(/[а-щА-ЩЬьЮюЯяЇїІіЄєҐґ' №\d"()]+/)}
                 </Typography>
-                <Typography sx={{ mb: 2 }} color="text.secondary">
-                    {ShortAddress}
-                </Typography>
+                <Typography color="text.secondary">{ShortAddress}</Typography>
             </CardContent>
         </Card>
     ) : (
@@ -42,15 +40,13 @@ export const WarehouseCard = React.forwardRef<
         >
             <CardContent>
                 <Typography
-                    sx={{ fontSize: 14 }}
+                    sx={{ fontSize: 14, fontWeight: 'bold' }}
                     color="text.secondary"
                     gutterBottom
                 >
                     {Description.match(/[а-щА-ЩЬьЮюЯяЇїІіЄєҐґ' №\d"()]+/)}
                 </Typography>
-                <Typography sx={{ mb: 2 }} color="text.secondary">
-                    {ShortAddress}
-                </Typography>
+                <Typography color="text.secondary">{ShortAddress}</Typography>
             </CardContent>
         </Card>
     );
