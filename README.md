@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+# Hi there!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**_About_**: It's test application.
 
-## Available Scripts
+## Projects
 
-In the project directory, you can run:
+For building project used **[ReactJs + TypeScript](https://create-react-app.dev/)**\
+Some basic **Project** commands are:
 
-### `npm start`
+| Command          | Description                                                           |
+| ---------------- | --------------------------------------------------------------------- |
+| `npm install `   | Will installed dependencies                                           |
+| `npm run start`  | Start project in dev mode                                             |
+| `npm run build`  | Build for production                                                  |
+| `npm run test `  | Launches the test runner                                              |
+| `npm run eject ` | **This is a one-way operation. Once you `eject`, you can’t go back!** |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**_Important_**\
+In case if you want to deploy this project into your base, you are required **`.env` file**. Example of **var** you can find into **`.env.example`**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Tasks
 
-### `npm test`
+1. Main
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-   [x] Main tasks
+-   [x] TypeScript
+-   [x] Styling by MUI
+-   [x] Redux Toolkit
+-   [x] Redux AsyncThunk
+-   [x] Axios
+-   [x] Commits and Branches
 
-### `npm run build`
+2. Addition
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-   [x] Automatically deploying into gh-pages after push
+-   [x] Additional layout for mobile
+-   [x] Infinity scroll for list of offices
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Contacts
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Anyway don't hesitate to contact me, you can find my contacts [here](https://github.com/Vokoloven).
