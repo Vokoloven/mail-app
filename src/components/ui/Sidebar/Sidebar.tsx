@@ -61,7 +61,7 @@ export const Sidebar = () => {
                                         );
                                         dispatch(setTtn(ttn!));
                                     }}
-                                    aria-label="list"
+                                    aria-label="list ttn"
                                     sx={{
                                         color: 'violet.main',
                                         '&:hover': {
@@ -86,7 +86,7 @@ export const Sidebar = () => {
                 <ListItem disablePadding>
                     <ListItemButton
                         onClick={() => dispatch(setList({}))}
-                        aria-label="remove"
+                        aria-label="clear list"
                         sx={{
                             color: 'error.main',
                             '&:hover': {
