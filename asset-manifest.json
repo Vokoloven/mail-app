@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/mail-app/static/js/main.13fbab7f.js",
-    "static/js/804.81660c1a.chunk.js": "/mail-app/static/js/804.81660c1a.chunk.js",
+    "main.js": "/mail-app/static/js/main.ba23cfd6.js",
+    "static/js/804.37e8478c.chunk.js": "/mail-app/static/js/804.37e8478c.chunk.js",
     "static/js/362.525fdf9f.chunk.js": "/mail-app/static/js/362.525fdf9f.chunk.js",
     "static/js/400.7dc6632d.chunk.js": "/mail-app/static/js/400.7dc6632d.chunk.js",
     "static/js/176.4299b109.chunk.js": "/mail-app/static/js/176.4299b109.chunk.js",
     "index.html": "/mail-app/index.html",
-    "main.13fbab7f.js.map": "/mail-app/static/js/main.13fbab7f.js.map",
-    "804.81660c1a.chunk.js.map": "/mail-app/static/js/804.81660c1a.chunk.js.map",
+    "main.ba23cfd6.js.map": "/mail-app/static/js/main.ba23cfd6.js.map",
+    "804.37e8478c.chunk.js.map": "/mail-app/static/js/804.37e8478c.chunk.js.map",
     "362.525fdf9f.chunk.js.map": "/mail-app/static/js/362.525fdf9f.chunk.js.map",
     "400.7dc6632d.chunk.js.map": "/mail-app/static/js/400.7dc6632d.chunk.js.map",
     "176.4299b109.chunk.js.map": "/mail-app/static/js/176.4299b109.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.13fbab7f.js"
+    "static/js/main.ba23cfd6.js"
   ]
 }
