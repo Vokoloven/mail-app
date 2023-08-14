@@ -78,26 +78,28 @@ export const Sidebar = () => {
                                 </ListItemButton>
                             </ListItem>
                         ))}
-                        <Divider />
-                        <ListItem disablePadding>
-                            <ListItemButton
-                                onClick={() => dispatch(setList({}))}
-                                aria-label="remove"
-                                sx={{
-                                    color: 'error.main',
-                                    '&:hover': {
-                                        bgcolor: 'action.errorHover'
-                                    }
-                                }}
-                            >
-                                <ListItemIcon>
-                                    <DeleteIcon sx={{ color: 'error.main' }} />
-                                </ListItemIcon>
-                                <ListItemText primary={'Clear List'} />
-                            </ListItemButton>
-                        </ListItem>
                     </React.Fragment>
                 )}
+            </List>
+            <Divider />
+            <List>
+                <ListItem disablePadding>
+                    <ListItemButton
+                        onClick={() => dispatch(setList({}))}
+                        aria-label="remove"
+                        sx={{
+                            color: 'error.main',
+                            '&:hover': {
+                                bgcolor: 'action.errorHover'
+                            }
+                        }}
+                    >
+                        <ListItemIcon>
+                            <DeleteIcon sx={{ color: 'error.main' }} />
+                        </ListItemIcon>
+                        <ListItemText primary={'Clear List'} />
+                    </ListItemButton>
+                </ListItem>
             </List>
         </Paper>
     );
