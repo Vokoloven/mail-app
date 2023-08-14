@@ -51,7 +51,7 @@ export const CustomBottomNavigation = () => {
                             icon={icon}
                             sx={{
                                 '&.Mui-selected': {
-                                    color: 'violet.main'
+                                    color: 'violet.dark'
                                 }
                             }}
                         />
