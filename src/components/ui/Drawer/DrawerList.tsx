@@ -38,7 +38,7 @@ export const DrawerList = ({ setState, state }: TProps) => {
             </List>
             <Divider />
             <List>
-                {list.length > 0 && (
+                {Boolean(list.length) && (
                     <React.Fragment>
                         {list.map(({ ttn }, index) => (
                             <ListItem key={index} disablePadding>
@@ -71,26 +71,30 @@ export const DrawerList = ({ setState, state }: TProps) => {
                     </React.Fragment>
                 )}
             </List>
-            <Divider />
-            <List>
-                <ListItem disablePadding>
-                    <ListItemButton
-                        onClick={() => dispatch(setList({}))}
-                        aria-label="clear list"
-                        sx={{
-                            color: 'error.main',
-                            '&:hover': {
-                                bgcolor: 'action.errorHover'
-                            }
-                        }}
-                    >
-                        <ListItemIcon>
-                            <DeleteIcon sx={{ color: 'error.main' }} />
-                        </ListItemIcon>
-                        <ListItemText primary={'Clear List'} />
-                    </ListItemButton>
-                </ListItem>
-            </List>
+            {Boolean(list.length) && (
+                <Box>
+                    <Divider />
+                    <List>
+                        <ListItem disablePadding>
+                            <ListItemButton
+                                onClick={() => dispatch(setList({}))}
+                                aria-label="clear list"
+                                sx={{
+                                    color: 'error.main',
+                                    '&:hover': {
+                                        bgcolor: 'action.errorHover'
+                                    }
+                                }}
+                            >
+                                <ListItemIcon>
+                                    <DeleteIcon sx={{ color: 'error.main' }} />
+                                </ListItemIcon>
+                                <ListItemText primary={'Clear List'} />
+                            </ListItemButton>
+                        </ListItem>
+                    </List>
+                </Box>
+            )}
         </Box>
     );
 };
