@@ -37,42 +37,40 @@ export const DrawerList = ({ setState, state }: TProps) => {
                 </ListItem>
             </List>
             <Divider />
-            <List>
-                {Boolean(list.length) && (
-                    <React.Fragment>
-                        {list.map(({ ttn }, index) => (
-                            <ListItem key={index} disablePadding>
-                                <ListItemButton
-                                    onClick={() => {
-                                        dispatch(
-                                            fetchTrackingByTtn(
-                                                formatter(ttn!, 'unformat')
-                                            )
-                                        );
-                                        dispatch(setTtn(ttn!));
-                                    }}
-                                    aria-label="list ttn"
-                                    sx={{
-                                        color: 'violet.main',
-                                        '&:hover': {
-                                            bgcolor: 'action.violetHover'
-                                        }
-                                    }}
-                                >
-                                    <ListItemIcon>
-                                        <NumbersIcon
-                                            sx={{ color: 'violet.main' }}
-                                        />
-                                    </ListItemIcon>
-                                    <ListItemText primary={ttn} />
-                                </ListItemButton>
-                            </ListItem>
-                        ))}
-                    </React.Fragment>
-                )}
-            </List>
             {Boolean(list.length) && (
                 <Box>
+                    <List>
+                        <React.Fragment>
+                            {list.map(({ ttn }, index) => (
+                                <ListItem key={index} disablePadding>
+                                    <ListItemButton
+                                        onClick={() => {
+                                            dispatch(
+                                                fetchTrackingByTtn(
+                                                    formatter(ttn!, 'unformat')
+                                                )
+                                            );
+                                            dispatch(setTtn(ttn!));
+                                        }}
+                                        aria-label="list ttn"
+                                        sx={{
+                                            color: 'violet.main',
+                                            '&:hover': {
+                                                bgcolor: 'action.violetHover'
+                                            }
+                                        }}
+                                    >
+                                        <ListItemIcon>
+                                            <NumbersIcon
+                                                sx={{ color: 'violet.main' }}
+                                            />
+                                        </ListItemIcon>
+                                        <ListItemText primary={ttn} />
+                                    </ListItemButton>
+                                </ListItem>
+                            ))}
+                        </React.Fragment>
+                    </List>
                     <Divider />
                     <List>
                         <ListItem disablePadding>
